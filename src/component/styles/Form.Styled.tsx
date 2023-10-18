@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import Select from 'react-select';
 
 interface Props {
   borderColor?: string;
+  option?:any
 }
 
 export const MainDiv = styled.div`
@@ -90,4 +92,51 @@ export const AddressDropdown = styled.select<Props>`
   :focus {
     border-color: #000000;
   }
+`;
+
+export const CountryOptions = styled.option<Props>`
+border: ${(props) => props.borderColor};
+  background: transparent;
+  outline: none;
+  width: 100%;
+  height: 40px;
+  line-height: 1.4rem;
+  font-size: medium;
+  :focus {
+    border-color: #000000;
+  }
+`
+
+export const SelectWrapper = styled.div`
+  
+  width: 100%;
+  border: 1px solid black;
+
+`
+
+export const CustomSelect = styled(Select)`
+  & > div[class*="control"] {
+    border: none;
+    color: black;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06); 
+  } 
+
+  /* & > div[class*="value-container"] {
+    padding: 10px 14px;
+  }
+  
+  & input {
+    color: black;
+    margin: 0;
+  }
+
+  & > div[class*="indicators-container"] {
+    padding-right: 12px;
+  }
+
+  & > div[class*="menu"] {
+    margin-top: 5px;
+  } */
 `;
