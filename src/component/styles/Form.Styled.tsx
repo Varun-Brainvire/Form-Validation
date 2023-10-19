@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import Select from 'react-select';
+import Select from "react-select";
 
 interface Props {
   borderColor?: string;
-  option?:any
+  option?: any;
 }
 
 export const MainDiv = styled.div`
@@ -95,7 +95,7 @@ export const AddressDropdown = styled.select<Props>`
 `;
 
 export const CountryOptions = styled.option<Props>`
-border: ${(props) => props.borderColor};
+  border: ${(props) => props.borderColor};
   background: transparent;
   outline: none;
   width: 100%;
@@ -105,14 +105,12 @@ border: ${(props) => props.borderColor};
   :focus {
     border-color: #000000;
   }
-`
+`;
 
 export const SelectWrapper = styled.div`
-  
   width: 100%;
   border: 1px solid black;
-
-`
+`;
 
 export const CustomSelect = styled(Select)`
   & > div[class*="control"] {
@@ -120,23 +118,101 @@ export const CustomSelect = styled(Select)`
     color: black;
     background: #fff;
     border-radius: 4px;
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06); 
-  } 
-
-  /* & > div[class*="value-container"] {
-    padding: 10px 14px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }
-  
-  & input {
-    color: black;
-    margin: 0;
-  }
-
-  & > div[class*="indicators-container"] {
-    padding-right: 12px;
-  }
-
-  & > div[class*="menu"] {
-    margin-top: 5px;
-  } */
 `;
+
+export const RadioWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  background: transparent;
+  outline: none;
+  border: black 1px solid;
+  border-radius: 0 !important;
+  width: 100%;
+  height: 40px;
+  line-height: 1.4rem;
+  font-size: medium;
+  margin-bottom: 15px;
+  :focus {
+    border-color: #000000;
+  }
+`;
+
+export const RadioInput = styled.input`
+  /* width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #000;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  & :checked {
+    background-color: #000;
+  } */
+
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  outline: none;
+  cursor: pointer;
+
+  &:checked {
+    background-color: #000;
+  }
+
+`;
+
+export const RadioLabel = styled.label`
+  margin-left: 10px;
+`;
+
+export const CheckBoxInput = styled.input`
+  cursor: pointer;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+
+  &:after {
+    width: 20px;
+    height: 20px;
+  }
+`;
+
+export const CheckBoxWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  background: transparent;
+  outline: none;
+  border: black 1px solid;
+  border-radius: 0 !important;
+  width: 100%;
+  height: 40px;
+  line-height: 1.4rem;
+  font-size: medium;
+  margin-bottom: 15px;
+  :focus {
+    border-color: #000000;
+  }
+`;
+
+export const CheckBoxLabel = styled.label`
+  margin-left: 10px;
+  font-size: 15px;
+`;
+
+export const SubmitButton = styled.button`
+  background-color: #313131!important;
+  border-radius: 0 !important;
+  color: #fff;
+  font-weight: 700;
+  min-height: 3.4rem;
+  min-width: 9.2em;
+  font-size: 1.03em;
+`;
+
