@@ -10,23 +10,30 @@ import {
 interface Props {
   label?: string;
   type?: string;
-  setSelectedRadio:(data:string) => void,
-  selectedRadio:string
+  setSelectedRadio:any,
+  selectedRadio:any,
+  errors:any
 }
 
-const RadioButton = ({ label, type,selectedRadio,setSelectedRadio }: Props) => {
+const RadioButton = ({ label, type,selectedRadio,setSelectedRadio,errors }: Props) => {
 //   const [selectedRadio, setSelectedRadio] = useState("");
-
+  // console.log(errors)
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value,selectedRadio,"others")
     if (selectedRadio) {
       setSelectedRadio("");
     } else {
       setSelectedRadio(e.target.value);
+      console.log(e.target.value)
     }
+    if(!e.target.value) {
+      // errors.radio = "Please select any one option"
+    }
+    
   };
 
   return (
+    <>
     <>
       <RadioWrapper>
         <RadioInput
@@ -42,6 +49,8 @@ const RadioButton = ({ label, type,selectedRadio,setSelectedRadio }: Props) => {
       </RadioWrapper>
       
     </>
+        {!selectedRadio && <span style={{"color":"red"}}>{errors.radioButton}</span>}
+        </>
   );
 };
 
